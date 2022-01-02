@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 19:33:06 by oswin         #+#    #+#                 */
-/*   Updated: 2021/12/13 19:33:07 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/02 21:27:48 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ int	get_next_line(int fd, char **line)
 		len = read(fd, buff, BUFFER_SIZE);
 	}
 	if (!len)
-		return (bufferfix(buff, 0));
+		return (bufferfix(buff, 0)); // could return 0 instead maybe?
 	return (-1);
 }

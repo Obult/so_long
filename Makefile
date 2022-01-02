@@ -6,12 +6,12 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2021/12/22 16:57:35 by oswin         ########   odam.nl          #
+#    Updated: 2022/01/02 21:46:34 by oswin         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
-OBJ			= obj/main.o
+OBJ			= obj/main.o obj/import_map.o
 CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/

@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2021/11/04 17:05:55 by obult         ########   odam.nl          #
+#    Updated: 2022/01/02 21:39:20 by oswin         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRCS	= ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c ./ft_isdigit.c\
 ./ft_memmove.c ./ft_memset.c ./ft_strchr.c ./ft_strdup.c ./ft_strlcat.c \
 ./ft_strlcpy.c ./ft_strlen.c ./ft_strncmp.c ./ft_strnstr.c ./ft_strrchr.c \
 ./ft_tolower.c ./ft_toupper.c \
-./gnl.c ./add_printarray.c
+$(ADDITIONS)
+
+ADDITIONS	= gnl.c add_printarray.c
 
 BONUS	= ./ft_lstadd_back.c ./ft_lstadd_front.c ./ft_lstclear.c \
 ./ft_lstdelone.c ./ft_lstiter.c ./ft_lstlast.c ./ft_lstmap.c ./ft_lstnew.c \
