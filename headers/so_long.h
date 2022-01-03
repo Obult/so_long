@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 21:53:47 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/03 22:39:14 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_data
 	t_image	food;
 	t_image	sprite;
 	int		error;
+	int		x;
+	int		y;
 }			t_data;
 
 int	import_map(t_data *data, int argc, char **argv);
@@ -52,5 +54,7 @@ int	set_hooks(t_data *data);
 
 void	push_img_to_coords(t_data data, t_image img, int x, int y);
 void	push_map(t_data data);
+
+void	sl_walk_up(t_data data);
 
 #endif
