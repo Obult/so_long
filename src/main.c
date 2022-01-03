@@ -5,18 +5,61 @@
 #include "so_long.h"
 #include "libft.h"
 
+void	ft_free_array(void **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+}
+
+int	ft_catch_error(t_data data)
+{
+	if (data.error >= -4)
+		return (data.error);
+	if (data.error <= -5)
+	{
+		ft_free_array((void *)data.map.map);
+		free(data.map.map);
+	}
+	if (data.error <= -16)
+	{
+		// free mlx stuff
+		mlx_destroy_window(data.mlx, data.win);
+		mlx_destroy_display(data.mlx);
+		free(data.mlx);
+	}
+	return (data.error);
+}
+
 int		main(int argc, char **argv)
 {
 	t_data	data;
 
+	data.error = 0;
 	data.error = import_map(&data, argc, argv);
-		// 	setup_mlx(brrr);
-		// 		load_textures()	
-		// 			set_hooks()
-	// catch_error()
-	// loop_mlxie()
+	if (data.error < 0)
+	{
+		printf("error: %i\n", data.error);
+		ft_catch_error(data);
+		return (1);
+	}
+	printf("depth: %i\n", data.map.dep);
+	printf("length: %i\n", data.map.len);
 	add_printarray_fd(data.map.map, 1);
 
+	// loop_mlxie()
+	// mlx_put_image_to_window(data.mlx, data.win, data.wall.ptr, 64, 64);
+	// push_img_to_coords(data, data.wall, 1, 1);
+	push_map(data);
+	sleep(15);
+
+	data.error = -42;
+	ft_catch_error(data);
 }
 
 // int main(void)

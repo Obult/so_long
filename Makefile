@@ -6,12 +6,13 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/02 21:46:34 by oswin         ########   odam.nl          #
+#    Updated: 2022/01/03 14:59:34 by oswin         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
-OBJ			= obj/main.o obj/import_map.o
+OBJ			= obj/main.o obj/import_map.o obj/setup_mlx.o obj/load_textures.o \
+			obj/set_hooks.o obj/push_image.o
 CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/

@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/02 21:49:39 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/03 15:34:41 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,14 @@ typedef struct s_data
 
 int	import_map(t_data *data, int argc, char **argv);
 t_map	get_map(char *location);
+
+int	setup_mlx(t_data *data);
+
+int	load_textures(t_data *data);
+
+int	set_hooks(t_data *data);
+
+void	push_img_to_coords(t_data data, t_image img, int x, int y);
+void	push_map(t_data data);
 
 #endif
