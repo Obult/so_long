@@ -6,18 +6,12 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 15:34:41 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/03 21:53:47 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-
-typedef struct s_vars
-{
-	void	*mlx;
-	void	*win;
-}			t_vars;
 
 typedef struct s_image
 {

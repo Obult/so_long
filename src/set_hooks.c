@@ -6,32 +6,40 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 21:37:23 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 14:44:36 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/03 22:17:04 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
 #include "so_long.h"
 #include <stdlib.h>
+#include "libft.h"
+#include <unistd.h>
 
-int	key_hook(int keycode, t_vars *vars)
+int	key_hook(int keycode, t_data *data)
 {
-	if (keycode == 29)
+	// ft_putnbr_fd(keycode, 1);
+	// write(1, "\n", 1);
+	if (keycode == 65307)
 	{
-		mlx_destroy_window(vars->mlx, vars->win);
-		mlx_destroy_display(vars->mlx);
-		free(vars->mlx);	
+		mlx_destroy_window(data->mlx, data->win);
+		exit(0);
 	}
-	// do stuff with keykodes w a s d and a quit hook maybe esc or a combo
+	else if (keycode == 65362)
+		sl_walk_up(data);
+	else if (keycode == 65361)
+		sl_walk_left(data);
+	else if (keycode == 65364)
+		sl_walk_down(data);
+	else if (keycode == 65363)
+		sl_walk_right(data);
+	else if (keycode == 32)
+		sl_do_special(data);
 	return (0);
 }
 
 int	set_hooks(t_data *data)
 {
-	t_vars	vars;
-
-	vars.mlx = data->mlx;
-	vars.win = data->win;
-	mlx_key_hook(vars.win, key_hook, &vars);
+	mlx_key_hook(data->win, key_hook, data);
 	return (0);
 }
