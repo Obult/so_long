@@ -47,7 +47,7 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	data.x = 5;
-	data.y = 3;
+	data.y = 6;
 	// add_printarray_fd(data.map.map, 1);
 	push_map(data);
 	mlx_loop(data.mlx);

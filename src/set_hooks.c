@@ -26,7 +26,7 @@ int	key_hook(int keycode, t_data *data)
 		exit(0);
 	}
 	else if (keycode == 65362)
-		sl_walk_up(*data);
+		sl_walk_up(data);
 	// else if (keycode == 65361)
 	// 	sl_walk_left(data);
 	// else if (keycode == 65364)
