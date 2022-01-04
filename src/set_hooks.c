@@ -27,12 +27,12 @@ int	key_hook(int keycode, t_data *data)
 	}
 	else if (keycode == 65362)
 		sl_walk_up(data);
-	// else if (keycode == 65361)
-	// 	sl_walk_left(data);
-	// else if (keycode == 65364)
-	// 	sl_walk_down(data);
-	// else if (keycode == 65363)
-	// 	sl_walk_right(data);
+	else if (keycode == 65361)
+		sl_walk_left(data);
+	else if (keycode == 65364)
+		sl_walk_down(data);
+	else if (keycode == 65363)
+		sl_walk_right(data);
 	// else if (keycode == 32)
 	// 	sl_do_special(data);
 	return (0);

@@ -38,7 +38,7 @@ typedef struct s_data
 	t_image	exit;
 	t_image	food;
 	t_image	sprite;
-	t_image blck;
+	// t_image blck;
 	int		error;
 	int		x;
 	int		y;
@@ -57,5 +57,8 @@ void	push_img_to_coords(t_data data, t_image img, int x, int y);
 void	push_map(t_data data);
 
 void	sl_walk_up(t_data *data);
+void	sl_walk_down(t_data *data);
+void	sl_walk_left(t_data *data);
+void	sl_walk_right(t_data *data);
 
 #endif

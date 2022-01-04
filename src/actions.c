@@ -47,7 +47,7 @@ void	sl_walk_up(t_data *data)
 		return ;
 	}
 	data->map.map[data->y][data->x] = '0';
-	data->map.map[data->y - 1][data->x] = 'P';
+	// data->map.map[data->y - 1][data->x] = 'P';
 	// data->y--;
 	// push_black(data);
 	// mlx_clear_window(data->mlx, data->win);
@@ -55,5 +55,56 @@ void	sl_walk_up(t_data *data)
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x, data->y - 1);
 	data->y--;
+	return ;
+}
+
+void	sl_walk_left(t_data *data)
+{
+	if (data->map.map[data->y][data->x - 1] == '1')
+		return ;
+	if (data->map.map[data->y][data->x - 1] == 'E')
+	{
+		exit(0);
+		mlx_destroy_window(data->mlx, data->win);
+		return ;
+	}
+	data->map.map[data->y][data->x] = '0';
+	push_img_to_coords(*data, data->open, data->x, data->y);
+	push_img_to_coords(*data, data->sprite, data->x - 1, data->y);
+	data->x--;
+	return ;
+}
+
+void	sl_walk_right(t_data *data)
+{
+	if (data->map.map[data->y][data->x + 1] == '1')
+		return ;
+	if (data->map.map[data->y][data->x + 1] == 'E')
+	{
+		exit(0);
+		mlx_destroy_window(data->mlx, data->win);
+		return ;
+	}
+	data->map.map[data->y][data->x] = '0';
+	push_img_to_coords(*data, data->open, data->x, data->y);
+	push_img_to_coords(*data, data->sprite, data->x + 1, data->y);
+	data->x++;
+	return ;
+}
+
+void	sl_walk_down(t_data *data)
+{
+	if (data->map.map[data->y + 1][data->x] == '1')
+		return ;
+	if (data->map.map[data->y + 1][data->x] == 'E')
+	{
+		exit(0);
+		mlx_destroy_window(data->mlx, data->win);
+		return ;
+	}
+	data->map.map[data->y][data->x] = '0';
+	push_img_to_coords(*data, data->open, data->x, data->y);
+	push_img_to_coords(*data, data->sprite, data->x, data->y + 1);
+	data->y++;
 	return ;
 }
