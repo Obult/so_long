@@ -14,27 +14,27 @@
 #include "libft.h"
 #include "so_long.h"
 
-// void	push_black(t_data data)
-// {
-// 	int		x;
-// 	int		y;
-//
-// 	new image
-//
-// 	x = 0;
-// 	while (x < data.map.len * 64)
-// 	{
-// 		y = 0;
-// 		while (y < data.map.dep * 64)
-// 		{
-//
-// 			set this pixel in image to black
-// 			y++;
-// 		}
-// 		x++;
-// 	}
-// 	push image
-// }
+int	exitcheck(t_data data)
+{
+	int	count;
+	int	x;
+	int	y;
+
+	count = 0;
+	x = 0;
+	while (x < data.map.len)
+	{
+		y = 0;
+		while (y < data.map.dep)
+		{
+			if (data.map.map[y][x] == 'C')
+				count++;
+			y++;
+		}
+		x++;
+	}
+	return (count);
+}
 
 void	sl_walk_up(t_data *data)
 {
@@ -42,6 +42,8 @@ void	sl_walk_up(t_data *data)
 		return ;
 	if (data->map.map[data->y - 1][data->x] == 'E')
 	{
+		if (exitcheck(*data) > 0)
+			return ;
 		exit(0);
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
@@ -55,6 +57,7 @@ void	sl_walk_up(t_data *data)
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x, data->y - 1);
 	data->y--;
+	data->map.map[data->y][data->x] = 'P';
 	return ;
 }
 
@@ -64,6 +67,8 @@ void	sl_walk_left(t_data *data)
 		return ;
 	if (data->map.map[data->y][data->x - 1] == 'E')
 	{
+		if (exitcheck(*data) > 0)
+			return ;
 		exit(0);
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
@@ -72,6 +77,7 @@ void	sl_walk_left(t_data *data)
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x - 1, data->y);
 	data->x--;
+	data->map.map[data->y][data->x] = 'P';
 	return ;
 }
 
@@ -81,6 +87,8 @@ void	sl_walk_right(t_data *data)
 		return ;
 	if (data->map.map[data->y][data->x + 1] == 'E')
 	{
+		if (exitcheck(*data) > 0)
+			return ;
 		exit(0);
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
@@ -89,6 +97,7 @@ void	sl_walk_right(t_data *data)
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x + 1, data->y);
 	data->x++;
+	data->map.map[data->y][data->x] = 'P';
 	return ;
 }
 
@@ -98,6 +107,8 @@ void	sl_walk_down(t_data *data)
 		return ;
 	if (data->map.map[data->y + 1][data->x] == 'E')
 	{
+		if (exitcheck(*data) > 0)
+			return ;
 		exit(0);
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
@@ -106,5 +117,6 @@ void	sl_walk_down(t_data *data)
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x, data->y + 1);
 	data->y++;
+	data->map.map[data->y][data->x] = 'P';
 	return ;
 }
