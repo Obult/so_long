@@ -29,8 +29,7 @@ int	ft_catch_error(t_data data)
 	if (data.error <= -16)
 	{
 		mlx_destroy_window(data.mlx, data.win);
-		mlx_destroy_display(data.mlx);
-		free(data.mlx);
+		exit(0);
 	}
 	return (data.error);
 }

@@ -17,7 +17,7 @@ CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/
 CFLAGS		= -Wall -Werror -Wextra
-MLXFLAGS	= -Lmlx_linux -lmlx -lXext -lX11 -lm -lz
+MLXFLAGS	= -Lmlx_linux -lmlx -lXext -lX11 -lm -lz -lbsd
 
 all:		${NAME}
 

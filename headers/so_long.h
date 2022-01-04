@@ -38,6 +38,7 @@ typedef struct s_data
 	t_image	exit;
 	t_image	food;
 	t_image	sprite;
+	t_image blck;
 	int		error;
 	int		x;
 	int		y;
