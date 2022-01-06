@@ -83,7 +83,7 @@ int	import_map(t_data *data, int argc, char **argv)
 	if (data->map.err < 0)
 		return (data->map.err);
 
-	if(check_map(&data->map) != 0) // here checking starts
+	if(check_map(&data->map) != 0)
 		return (-6);
 	data->map.len = ft_strlen(data->map.map[0]);
 
@@ -143,3 +143,4 @@ t_map	get_map(char *location)
 	world.err = -5;
 	return (world);
 }
+
