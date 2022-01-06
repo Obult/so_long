@@ -28,31 +28,31 @@ int	ft_arrlen(void **arr)
 
 int	check_map_data(t_map *world)
 {
-		int i;
-		int j;
-		int	p;
+	int i;
+	int j;
+	int	p;
 
-		p = -1;
-		i = 0;
-		while (i <world->len)
+	p = -1;
+	i = 0;
+	while (i <world->len)
+	{
+		j = 0;
+		while (j < world->dep)
 		{
-			j = 0;
-			while (j < world->dep)
+			if (i == 0 || j == 0 || i == world->len -1 || j == world->dep - 1)
 			{
-				if (i == 0 || j == 0 || i == world->len -1 || j == world->dep - 1)
-				{
-					if (world->map[j][i] != '1')
-						return (-6);
-				}
-				else if (ft_strrchr("10CPE", world->map[j][i]) == NULL)
+				if (world->map[j][i] != '1')
 					return (-6);
-				if (world->map[j][i] == 'P')
-					p++;
-				j++;
 			}
-			i++;
+			else if (ft_strrchr("10CPE", world->map[j][i]) == NULL)
+				return (-6);
+			if (world->map[j][i] == 'P')
+				p++;
+			j++;
 		}
-		return (p);
+		i++;
+	}
+	return (p);
 }
 
 int	check_map(t_map *world)
