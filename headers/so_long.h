@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 21:36:48 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 22:16:08 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,12 @@ typedef struct s_data
 {
 	void	*mlx;
 	void	*win;
-	t_map	map; // needs change to world to not have map.map cases
+	t_map	map;
 	t_image	wall;
 	t_image	open;
 	t_image	exit;
 	t_image	food;
 	t_image	sprite;
-	// t_image blck;
 	int		error;
 	int		x;
 	int		y;

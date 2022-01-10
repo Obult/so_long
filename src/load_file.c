@@ -1,7 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   load_file.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: oswin <oswin@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/10 22:18:53 by oswin         #+#    #+#                 */
+/*   Updated: 2022/01/10 22:28:28 by oswin         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "so_long.h"
 #include <unistd.h>
 #include <fcntl.h>
+
+int	check_ending(char *full, char *ending)
+{
+	int	len;
+	int elen;
+
+	len = ft_strlen(full);
+	elen = ft_strlen(ending);
+	while (len && elen)
+	{
+		len--;
+		elen--;
+		if (full[len] != ending[elen])
+			return (0);
+	}
+	return (1);
+}
 
 char	**get_file_in_array(char *loca, int *err)
 {
@@ -9,7 +38,7 @@ char	**get_file_in_array(char *loca, int *err)
 	char	**map;
 
 	*err = 0;
-	if (ft_strnstr(loca, ".ber", -1) == NULL)	// also needs work
+	if (check_ending(loca, ".ber") == 0)
 	{
 		*err = -2;
 		return (NULL);
@@ -73,10 +102,9 @@ char	**gnl_returner(int fd, char **map, int *err)
 		if ((i + 1) % 16 == 0)
 		{
 			if (ft_array_extender(&map, i, 16) == NULL) // here there are still problems
-			{
 				*err = -5;
+			if (*err < 0)
 				return (NULL);
-			}
 		}
 		gnl = get_next_line(fd, &map[i]);
 		if (gnl == -1)

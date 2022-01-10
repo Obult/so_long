@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/03 22:28:58 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 22:41:05 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 22:17:06 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,6 @@ void	sl_walk_up(t_data *data)
 		return ;
 	}
 	data->map.map[data->y][data->x] = '0';
-	// data->map.map[data->y - 1][data->x] = 'P';
-	// data->y--;
-	// push_black(data);
-	// mlx_clear_window(data->mlx, data->win);
-	// push_map(*data);
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x, data->y - 1);
 	data->y--;

@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:32:41 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 21:45:03 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 22:18:08 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	ft_arrlen(void **arr)
 
 int	check_map_data(t_map *world)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	int	p;
 
 	p = -1;
 	i = 0;
-	while (i <world->len)
+	while (i < world->len)
 	{
 		j = 0;
 		while (j < world->dep)
@@ -82,7 +82,7 @@ int	import_map(t_data *data, int argc, char **argv)
 	data->map.map = get_file_in_array(argv[1], &data->map.err);
 	if (data->map.err < 0)
 		return (data->map.err);
-	if(check_map(&data->map) != 0)
+	if (check_map(&data->map) != 0)
 		return (-6);
 	data->map.len = ft_strlen(data->map.map[0]);
 	return (setup_mlx(data));
