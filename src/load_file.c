@@ -44,23 +44,21 @@ void	free_map(char **map)
 	free(map);
 }
 
-char	**ft_array_extender(char **arr, int now, int ext)
+char	**ft_array_extender(char ***arr, int now, int ext)
 {
 	char	**tmp;
 
 	tmp = ft_calloc(now + ext, sizeof(char **));
 	if (tmp == NULL)
 	{
-		free_map(arr);
+		free_map(*arr);
 		return (tmp);
 	}
+	ft_memcpy(tmp, *arr, now);
 	if (now != 0)
-	{
-		ft_memcpy(tmp, arr, now);
-		free(arr);
-		arr = tmp;
-	}
-	return (arr);
+		free(*arr);
+	*arr = tmp;
+	return (*arr);
 }
 
 char	**gnl_returner(int fd, char **map, int *err)
@@ -74,7 +72,7 @@ char	**gnl_returner(int fd, char **map, int *err)
 	{
 		if ((i + 1) % 16 == 0)
 		{
-			if (ft_array_extender(map, i + 1, 16) == NULL) // here there are still problems
+			if (ft_array_extender(&map, i, 16) == NULL) // here there are still problems
 			{
 				*err = -5;
 				return (NULL);
