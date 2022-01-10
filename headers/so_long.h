@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 22:39:14 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 21:36:48 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,8 @@ void	sl_walk_up(t_data *data);
 void	sl_walk_down(t_data *data);
 void	sl_walk_left(t_data *data);
 void	sl_walk_right(t_data *data);
+
+char	**gnl_returner(int fd, char **map, int *err);
+char	**get_file_in_array(char *loca, int *err);
 
 #endif
