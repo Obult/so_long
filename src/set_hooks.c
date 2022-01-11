@@ -23,13 +23,13 @@ int	key_hook(int keycode, t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		exit(0);
 	}
-	else if (keycode == 65362)
+	else if (keycode == 65362 || keycode == 119)
 		sl_walk_up(data);
-	else if (keycode == 65361)
+	else if (keycode == 65361 || keycode == 97)
 		sl_walk_left(data);
-	else if (keycode == 65364)
+	else if (keycode == 65364 || keycode == 115)
 		sl_walk_down(data);
-	else if (keycode == 65363)
+	else if (keycode == 65363 || keycode == 100)
 		sl_walk_right(data);
 	// else if (keycode == 32)
 	// 	sl_do_special(data);
