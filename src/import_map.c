@@ -79,9 +79,9 @@ int	import_map(t_data *data, int argc, char **argv)
 {
 	if (argc != 2)
 		return (-1);
-	data->map.map = get_file_in_array(argv[1], &data->map.err);
-	if (data->map.err < 0)
-		return (data->map.err);
+	data->map.map = get_file_in_array(argv[1], &data->error);
+	if (data->error < 0)
+		return (data->error);
 	if (check_map(&data->map) != 0)
 		return (-6);
 	data->map.len = ft_strlen(data->map.map[0]);
