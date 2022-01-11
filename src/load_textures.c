@@ -66,7 +66,8 @@ int	load_textures(t_data *data)
 	load_single_tex(&data->open, data->mlx, "tex/open.xpm", &data->error);
 	load_single_tex(&data->exit, data->mlx, "tex/exit.xpm", &data->error);
 	load_single_tex(&data->food, data->mlx, "tex/food.xpm", &data->error);
-	load_single_tex(&data->sprite, data->mlx, "tex/new/sprite.xpm", &data->error);
+	load_single_tex(&data->sprite, data->mlx,
+		"tex/new/sprite.xpm", &data->error);
 	load_single_tex(&data->jump0, data->mlx, "tex/new/jump0.xpm", &data->error);
 	load_single_tex(&data->jump1, data->mlx, "tex/new/jump1.xpm", &data->error);
 	load_single_tex(&data->jump2, data->mlx, "tex/new/jump2.xpm", &data->error);
