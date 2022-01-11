@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/03 14:54:17 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 21:03:20 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 22:35:16 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	push_map(t_data data)
 	int		x;
 	int		y;
 
-	// printf("dep %i\n", data.map.dep);
 	x = 0;
 	while (x < data.map.len)
 	{

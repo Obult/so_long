@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: oswin <oswin@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/01/10 22:34:19 by oswin         #+#    #+#                 */
+/*   Updated: 2022/01/10 22:34:41 by oswin         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <mlx.h>
@@ -34,7 +46,7 @@ int	ft_catch_error(t_data data)
 	return (data.error);
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
@@ -48,9 +60,6 @@ int		main(int argc, char **argv)
 	}
 	data.x = 5;
 	data.y = 6;
-	// add_printarray_fd(data.map.map, 1);
 	push_map(data);
 	mlx_loop(data.mlx);
-	// data.error = -42;
-	// ft_catch_error(data);
 }

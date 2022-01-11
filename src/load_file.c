@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:18:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:28:28 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 22:30:59 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	check_ending(char *full, char *ending)
 {
 	int	len;
-	int elen;
+	int	elen;
 
 	len = ft_strlen(full);
 	elen = ft_strlen(ending);
@@ -55,7 +55,7 @@ char	**get_file_in_array(char *loca, int *err)
 		*err = -4;
 		return (NULL);
 	}
-	return(gnl_returner(fd, map, err));
+	return (gnl_returner(fd, map, err));
 }
 
 void	free_map(char **map)
@@ -91,7 +91,7 @@ char	**ft_array_extender(char ***arr, int now, int ext)
 }
 
 char	**gnl_returner(int fd, char **map, int *err)
-{ 
+{
 	int	i;
 	int	gnl;
 
@@ -101,7 +101,7 @@ char	**gnl_returner(int fd, char **map, int *err)
 	{
 		if ((i + 1) % 16 == 0)
 		{
-			if (ft_array_extender(&map, i, 16) == NULL) // here there are still problems
+			if (ft_array_extender(&map, i, 16) == NULL)
 				*err = -5;
 			if (*err < 0)
 				return (NULL);

@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 21:37:23 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/03 22:40:15 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/10 22:35:37 by oswin         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 int	key_hook(int keycode, t_data *data)
 {
-	// ft_putnbr_fd(keycode, 1);
-	// write(1, "\n", 1);
 	if (keycode == 65307)
 	{
 		mlx_destroy_window(data->mlx, data->win);
