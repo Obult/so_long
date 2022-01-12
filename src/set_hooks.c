@@ -23,9 +23,9 @@ void	sl_do_special(t_data *data)
 	push_img_to_coords(*data, data->jump1, data->x, data->y);
 	sleep(1);
 	push_img_to_coords(*data, data->jump2, data->x, data->y);
-
+	sleep(1);
 	push_img_to_coords(*data, data->jump3, data->x, data->y);
-
+	sleep(1);
 	push_img_to_coords(*data, data->jump4, data->x, data->y);
 
 	/* push_img_to_coords(*data, data->sprite, data->x, data->y); */

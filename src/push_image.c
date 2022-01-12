@@ -32,6 +32,7 @@ void	pick_image_to_push(t_data data, int x, int y)
 		push_img_to_coords(data, data.food, x, y);
 	if (data.map.map[y][x] == 'P')
 		push_img_to_coords(data, data.sprite, x, y);
+	mlx_do_sync(data.mlx);
 }
 
 void	push_map(t_data data)
