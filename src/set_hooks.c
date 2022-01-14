@@ -16,28 +16,10 @@
 #include "libft.h"
 #include <unistd.h>
 
-void	sl_do_special(t_data *data)
-{
-	push_img_to_coords(*data, data->jump0, data->x, data->y);
-	sleep(1);
-	push_img_to_coords(*data, data->jump1, data->x, data->y);
-	sleep(1);
-	push_img_to_coords(*data, data->jump2, data->x, data->y);
-	sleep(1);
-	push_img_to_coords(*data, data->jump3, data->x, data->y);
-	sleep(1);
-	push_img_to_coords(*data, data->jump4, data->x, data->y);
-
-	/* push_img_to_coords(*data, data->sprite, data->x, data->y); */
-}
-
 int	key_hook(int keycode, t_data *data)
 {
 	if (keycode == 65307 || keycode == 'q')
-	{
-		mlx_destroy_window(data->mlx, data->win);
 		exit(0);
-	}
 	else if (keycode == 65362 || keycode == 119)
 		sl_walk_up(data);
 	else if (keycode == 65361 || keycode == 97)
@@ -46,8 +28,6 @@ int	key_hook(int keycode, t_data *data)
 		sl_walk_down(data);
 	else if (keycode == 65363 || keycode == 100)
 		sl_walk_right(data);
-	else if (keycode == 32)
-		sl_do_special(data);
 	return (0);
 }
 
