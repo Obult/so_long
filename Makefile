@@ -6,7 +6,7 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/17 13:06:22 by obult         ########   odam.nl          #
+#    Updated: 2022/01/17 13:15:48 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ libclean:
 fclean:		clean
 				@${RM} ${NAME} \
 				$(info ************  so_long Removed) \
-				&& ${MAKE} fclean -C Libft --no-print-directory
+				&& ${MAKE} fclean -C Libft --no-print-directory \
+				&& ${MAKE} clean -C mlx --no-print-directory
 
 re:			fclean all
 

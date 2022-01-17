@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:34:19 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 13:01:52 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/17 13:14:40 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,18 +83,13 @@ int	main(int argc, char **argv)
 	data.error = 0;
 	data.moves = 0;
 	data.error = import_map(&data, argc, argv);
+	if (!data.error)
+		set_startpoint(&data);
 	if (data.error < 0)
 	{
 		ft_putendl_fd("Error", 2);
 		ft_putnbr_fd(data.error, 2);
-		ft_catch_error(data);
-		return (1);
-	}
-	set_startpoint(&data);
-	if (data.error < 0)
-	{
-		ft_putendl_fd("Error", 2);
-		ft_putnbr_fd(data.error, 2);
+		write(2, "\n", 1);
 		ft_catch_error(data);
 		return (1);
 	}
