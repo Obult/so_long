@@ -6,7 +6,7 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/17 10:47:46 by obult         ########   odam.nl          #
+#    Updated: 2022/01/17 13:06:22 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ Libft/libft.a:
 				@${MAKE} -C Libft --no-print-directory
 
 mlx/libmlx.a:
-				@${MAKE} -C minilibx --no-print-directory
+				@${MAKE} -C mlx --no-print-directory
 
 
 .PHONY: all clean fclean re libft
