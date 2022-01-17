@@ -6,14 +6,11 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:40:34 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:36:40 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/17 10:38:58 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <mlx.h>
-#include <stddef.h>
-#include <stdlib.h>
 
 int	setup_mlx(t_data *data)
 {

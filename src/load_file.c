@@ -6,14 +6,11 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:18:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:30:59 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/17 10:37:02 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
-#include <unistd.h>
-#include <fcntl.h>
 
 int	check_ending(char *full, char *ending)
 {

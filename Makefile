@@ -6,7 +6,7 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/10 21:36:29 by oswin         ########   odam.nl          #
+#    Updated: 2022/01/17 10:47:46 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/
 CFLAGS		= -Wall -Werror -Wextra
-MLXFLAGS	= -Lmlx_linux -lmlx -lXext -lX11 -lm -lz -lbsd
+MLXFLAGS	= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 all:		${NAME}
 
@@ -39,12 +39,15 @@ fclean:		clean
 
 re:			fclean all
 
-${NAME}:	${OBJ} Libft/libft.a
+${NAME}:	${OBJ} Libft/libft.a mlx/libmlx.a
 				@${CC} -o $@ $^ ${MLXFLAGS}\
 				$(info ************  so_long Ready!)
 
 Libft/libft.a:
 				@${MAKE} -C Libft --no-print-directory
+
+mlx/libmlx.a:
+				@${MAKE} -C minilibx --no-print-directory
 
 
 .PHONY: all clean fclean re libft

@@ -6,14 +6,11 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/03 14:54:17 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:35:16 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/17 10:52:23 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
-#include "libft.h"
 #include "so_long.h"
-#include <stdio.h>
 
 void	push_img_to_coords(t_data data, t_image img, int x, int y)
 {
@@ -32,7 +29,6 @@ void	pick_image_to_push(t_data data, int x, int y)
 		push_img_to_coords(data, data.food, x, y);
 	if (data.map.map[y][x] == 'P')
 		push_img_to_coords(data, data.sprite, x, y);
-	mlx_do_sync(data.mlx);
 }
 
 void	push_map(t_data data)

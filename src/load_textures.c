@@ -6,16 +6,11 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:38:22 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:33:37 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/17 10:37:31 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "libft.h"
-#include <mlx.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 void	load_single_tex(t_image *img, void *mlx, char *location, int *error)
 {

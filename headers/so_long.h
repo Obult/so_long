@@ -6,12 +6,19 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:16:08 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/17 12:58:27 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+# include <mlx.h>
+# include "libft.h"
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stddef.h>
 
 typedef struct s_image
 {
@@ -38,24 +45,22 @@ typedef struct s_data
 	t_image	exit;
 	t_image	food;
 	t_image	sprite;
-  t_image jump0;
-  t_image jump1;
-  t_image jump2;
-  t_image jump3;
-  t_image jump4;
 	int		error;
 	int		x;
 	int		y;
+	int		moves;
+	int		e;
+	int		c;
 }			t_data;
 
-int	import_map(t_data *data, int argc, char **argv);
+int		import_map(t_data *data, int argc, char **argv);
 t_map	get_map(char *location);
 
-int	setup_mlx(t_data *data);
+int		setup_mlx(t_data *data);
 
-int	load_textures(t_data *data);
+int		load_textures(t_data *data);
 
-int	set_hooks(t_data *data);
+int		set_hooks(t_data *data);
 
 void	push_img_to_coords(t_data data, t_image img, int x, int y);
 void	push_map(t_data data);

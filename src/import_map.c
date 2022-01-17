@@ -6,15 +6,11 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:32:41 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/10 22:18:08 by oswin         ########   odam.nl         */
+/*   Updated: 2022/01/17 10:36:40 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "so_long.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <stdio.h>
 
 int	ft_arrlen(void **arr)
 {
