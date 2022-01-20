@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:18:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 10:37:02 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 14:51:46 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ int	check_ending(char *full, char *ending)
 	return (1);
 }
 
-char	**get_file_in_array(char *loca, int *err)
+char	**get_file_in_array(char *loca, int *err, int fd)
 {
-	int		fd;
 	char	**map;
 
 	*err = 0;

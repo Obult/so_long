@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:32:41 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/20 12:22:48 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 14:32:12 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	import_map(t_data *data, int argc, char **argv)
 {
 	if (argc != 2)
 		return (-1);
-	data->map.map = get_file_in_array(argv[1], &data->error);
+	data->map.map = get_file_in_array(argv[1], &data->error, data->fd);
 	if (data->error < 0)
 		return (data->error);
 	if (check_map(&data->map) != 0)

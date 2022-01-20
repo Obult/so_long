@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/20 22:21:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 12:58:27 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 14:32:30 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_data
 	int		moves;
 	int		e;
 	int		c;
+	int		fd;
 }			t_data;
 
 int		import_map(t_data *data, int argc, char **argv);
@@ -71,6 +72,6 @@ void	sl_walk_left(t_data *data);
 void	sl_walk_right(t_data *data);
 
 char	**gnl_returner(int fd, char **map, int *err);
-char	**get_file_in_array(char *loca, int *err);
+char	**get_file_in_array(char *loca, int *err, int fd);
 
 #endif

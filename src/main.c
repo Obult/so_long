@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:34:19 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/20 12:00:43 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 14:53:27 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	main(int argc, char **argv)
 	data.error = 0;
 	data.moves = 0;
 	data.error = import_map(&data, argc, argv);
+	if (!data.error || data.error < -3)
+		close(data.fd);
 	if (!data.error)
 		set_startpoint(&data);
 	if (data.error < 0)
