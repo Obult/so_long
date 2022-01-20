@@ -1,0 +1,25 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    error_codes                                        :+:    :+:             #
+#                                                      +:+                     #
+#    By: obult <obult@student.codam.nl>               +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/01/20 11:59:36 by obult         #+#    #+#                  #
+#    Updated: 2022/01/20 12:26:59 by obult         ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
+-1		too many / few arguments
+-2		no .ber extention
+-3		open failed
+-4		initial map alocation failed
+-5		memory allocation failed
+-6		map is not rectangular
+-7		map contains other character than "PEC10"
+-21		faulty map, fewer than one exit or collectable
+
+-8		mlx init failed
+-9		mlx new window failed
+
+-16		texture loading gone wrong, texture might not exist

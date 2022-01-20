@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:40:34 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 10:38:58 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 12:24:36 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	setup_mlx(t_data *data)
 	if (data->win == NULL)
 	{
 		free(data->mlx);
-		return (-8);
+		return (-9);
 	}
 	return (load_textures(data));
 }

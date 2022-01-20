@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 21:37:23 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 11:39:04 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 12:18:34 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,6 @@ int	key_hook(int keycode, t_data *data)
 	else if (keycode == 65363 || keycode == 100 || keycode == 2)
 		sl_walk_right(data);
 	return (0);
-}
-
-int	ft_close(t_data *data)
-{
-	mlx_destroy_window(data->mlx, data->win);
-	exit(0);
 }
 
 int	set_hooks(t_data *data)

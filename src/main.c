@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:34:19 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 13:14:40 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 12:00:43 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_catch_error(t_data data)
 	if (data.error <= -16)
 	{
 		mlx_destroy_window(data.mlx, data.win);
-		exit(0);
+		exit(data.error);
 	}
 	return (data.error);
 }

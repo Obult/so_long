@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:32:41 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 10:36:40 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/20 12:22:48 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int	check_map_data(t_map *world)
 			if (i == 0 || j == 0 || i == world->len -1 || j == world->dep - 1)
 			{
 				if (world->map[j][i] != '1')
-					return (-6);
+					return (-7);
 			}
 			else if (ft_strrchr("10CPE", world->map[j][i]) == NULL)
-				return (-6);
+				return (-7);
 			if (world->map[j][i] == 'P')
 				p++;
 			j++;
