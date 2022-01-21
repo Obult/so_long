@@ -6,13 +6,14 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/20 18:48:20 by obult         ########   odam.nl          #
+#    Updated: 2022/01/21 15:44:08 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
-OBJ			= obj/main.o obj/import_map.o obj/setup_mlx.o obj/load_textures.o \
-			obj/set_hooks.o obj/push_image.o obj/actions.o obj/load_file.o
+OBJ			= main.o import_map.o setup_mlx.o load_textures.o \
+			set_hooks.o push_image.o actions.o load_file.o
+OBJS		= $(addprefix obj/, ${OBJ})
 CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/
@@ -26,7 +27,7 @@ obj/%.o:	src/%.c
 				$(CC) -c $(CFLAGS) $(HEADER) -o $@ $<
 
 clean:
-				@${RM} ${OBJ} \
+				@${RM} ${OBJS} \
 				$(info ************  so_long Clean)
 
 libclean:
@@ -40,7 +41,7 @@ fclean:		clean
 
 re:			fclean all
 
-${NAME}:	${OBJ} Libft/libft.a mlx/libmlx.a
+${NAME}:	${OBJS} Libft/libft.a mlx/libmlx.a
 				@${CC} -o $@ $^ ${MLXFLAGS}\
 				$(info ************  so_long Ready!)
 
