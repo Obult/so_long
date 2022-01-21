@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/22 20:32:41 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/21 13:52:28 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/21 15:23:38 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	check_map_data(t_map *world)
 	return (p);
 }
 
-#include <stdio.h>
 int	check_map(t_map *world)
 {
 	int	i;
@@ -61,7 +60,6 @@ int	check_map(t_map *world)
 	if (world->len < 3)
 		return (-7);
 	world->dep = ft_arrlen((void *)world->map);
-	printf("%i\n", world->dep);
 	if (world->dep < 3)
 		return (-6);
 	while (i < world->dep)
@@ -81,7 +79,6 @@ int	import_map(t_data *data, int argc, char **argv)
 	if (data->error < 0)
 		return (data->error);
 	data->error = check_map(&data->map);
-	printf("%i\n", data->error);
 	if (data->error < 0)
 		return (data->error);
 	if (data->error > 0)
