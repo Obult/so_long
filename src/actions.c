@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/03 22:28:58 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/17 11:16:22 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/21 14:14:06 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ void	sl_walk_up(t_data *data)
 {
 	if (data->map.map[data->y - 1][data->x] == '1')
 		return ;
-	data->moves++;
-	ft_putnbr_fd(data->moves, 1);
-	write(1, "\n", 1);
 	if (data->map.map[data->y - 1][data->x] == 'E')
 	{
 		if (exitcheck(*data) > 0)
@@ -49,6 +46,9 @@ void	sl_walk_up(t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
 	}
+	data->moves++;
+	ft_putnbr_fd(data->moves, 1);
+	write(1, "\n", 1);
 	data->map.map[data->y][data->x] = '0';
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x, data->y - 1);
@@ -61,9 +61,6 @@ void	sl_walk_left(t_data *data)
 {
 	if (data->map.map[data->y][data->x - 1] == '1')
 		return ;
-	data->moves++;
-	ft_putnbr_fd(data->moves, 1);
-	write(1, "\n", 1);
 	if (data->map.map[data->y][data->x - 1] == 'E')
 	{
 		if (exitcheck(*data) > 0)
@@ -72,6 +69,9 @@ void	sl_walk_left(t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
 	}
+	data->moves++;
+	ft_putnbr_fd(data->moves, 1);
+	write(1, "\n", 1);
 	data->map.map[data->y][data->x] = '0';
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x - 1, data->y);
@@ -84,9 +84,6 @@ void	sl_walk_right(t_data *data)
 {
 	if (data->map.map[data->y][data->x + 1] == '1')
 		return ;
-	data->moves++;
-	ft_putnbr_fd(data->moves, 1);
-	write(1, "\n", 1);
 	if (data->map.map[data->y][data->x + 1] == 'E')
 	{
 		if (exitcheck(*data) > 0)
@@ -95,6 +92,9 @@ void	sl_walk_right(t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
 	}
+	data->moves++;
+	ft_putnbr_fd(data->moves, 1);
+	write(1, "\n", 1);
 	data->map.map[data->y][data->x] = '0';
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x + 1, data->y);
@@ -107,9 +107,6 @@ void	sl_walk_down(t_data *data)
 {
 	if (data->map.map[data->y + 1][data->x] == '1')
 		return ;
-	data->moves++;
-	ft_putnbr_fd(data->moves, 1);
-	write(1, "\n", 1);
 	if (data->map.map[data->y + 1][data->x] == 'E')
 	{
 		if (exitcheck(*data) > 0)
@@ -118,6 +115,9 @@ void	sl_walk_down(t_data *data)
 		mlx_destroy_window(data->mlx, data->win);
 		return ;
 	}
+	data->moves++;
+	ft_putnbr_fd(data->moves, 1);
+	write(1, "\n", 1);
 	data->map.map[data->y][data->x] = '0';
 	push_img_to_coords(*data, data->open, data->x, data->y);
 	push_img_to_coords(*data, data->sprite, data->x, data->y + 1);

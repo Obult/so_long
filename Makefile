@@ -6,7 +6,7 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/17 13:15:48 by obult         ########   odam.nl          #
+#    Updated: 2022/01/20 18:48:20 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ			= obj/main.o obj/import_map.o obj/setup_mlx.o obj/load_textures.o \
 CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -g
 MLXFLAGS	= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 all:		${NAME}

@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/01/20 11:59:36 by obult         #+#    #+#                  #
-#    Updated: 2022/01/20 14:21:06 by obult         ########   odam.nl          #
+#    Updated: 2022/01/21 13:52:22 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 -4		initial map alocation failed
 -5		memory allocation failed or gnl failed
 -6		map is not rectangular
--7		map contains other character than "PEC10"
+-7		map contains other character than "PEC10" or more than one player
 -21		faulty map, fewer than one exit or collectable
 
 -8		mlx init failed

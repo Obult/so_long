@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/10 22:18:53 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/20 14:51:46 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/21 13:39:39 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_array_extender(char ***arr, int now, int ext)
 		free_map(*arr);
 		return (tmp);
 	}
-	ft_memcpy(tmp, *arr, now);
+	ft_memcpy(tmp, *arr, now * sizeof(void *));
 	if (now != 0)
 		free(*arr);
 	*arr = tmp;
@@ -97,7 +97,8 @@ char	**gnl_returner(int fd, char **map, int *err)
 	{
 		if ((i + 1) % 16 == 0)
 		{
-			if (ft_array_extender(&map, i, 16) == NULL)
+			map = ft_array_extender(&map, i, 16);
+			if (!map)
 				*err = -5;
 			if (*err < 0)
 				return (NULL);
