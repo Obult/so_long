@@ -6,14 +6,14 @@
 #    By: oswin <oswin@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/19 15:48:54 by oswin         #+#    #+#                  #
-#    Updated: 2022/01/21 15:44:08 by obult         ########   odam.nl          #
+#    Updated: 2022/01/21 15:55:17 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
-OBJ			= main.o import_map.o setup_mlx.o load_textures.o \
-			set_hooks.o push_image.o actions.o load_file.o
-OBJS		= $(addprefix obj/, ${OBJ})
+OBJ			= main import_map setup_mlx load_textures \
+			set_hooks push_image actions load_file
+OBJS		= $(addsuffix .o, $(addprefix obj/, ${OBJ}))
 CC			= gcc
 RM			= rm -f
 HEADER		= -I headers/
