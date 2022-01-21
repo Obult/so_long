@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/03 22:28:58 by oswin         #+#    #+#                 */
-/*   Updated: 2022/01/21 14:14:06 by obult         ########   odam.nl         */
+/*   Updated: 2022/01/21 15:39:54 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	sl_walk_up(t_data *data)
 	{
 		if (exitcheck(*data) > 0)
 			return ;
+		ft_putnbr_fd(data->moves + 1, 1);
+		write(1, "\n", 1);
 		exit(0);
-		mlx_destroy_window(data->mlx, data->win);
-		return ;
 	}
 	data->moves++;
 	ft_putnbr_fd(data->moves, 1);
@@ -65,9 +65,9 @@ void	sl_walk_left(t_data *data)
 	{
 		if (exitcheck(*data) > 0)
 			return ;
+		ft_putnbr_fd(data->moves + 1, 1);
+		write(1, "\n", 1);
 		exit(0);
-		mlx_destroy_window(data->mlx, data->win);
-		return ;
 	}
 	data->moves++;
 	ft_putnbr_fd(data->moves, 1);
@@ -88,9 +88,9 @@ void	sl_walk_right(t_data *data)
 	{
 		if (exitcheck(*data) > 0)
 			return ;
+		ft_putnbr_fd(data->moves + 1, 1);
+		write(1, "\n", 1);
 		exit(0);
-		mlx_destroy_window(data->mlx, data->win);
-		return ;
 	}
 	data->moves++;
 	ft_putnbr_fd(data->moves, 1);
@@ -111,9 +111,9 @@ void	sl_walk_down(t_data *data)
 	{
 		if (exitcheck(*data) > 0)
 			return ;
+		ft_putnbr_fd(data->moves + 1, 1);
+		write(1, "\n", 1);
 		exit(0);
-		mlx_destroy_window(data->mlx, data->win);
-		return ;
 	}
 	data->moves++;
 	ft_putnbr_fd(data->moves, 1);
